@@ -36,3 +36,19 @@ int frogJump(int n, vector<int> &heights)
 
     return dp[n] = min(left, right);
 }
+
+
+int frogJump(int n, vector<int> &heights)
+{
+    int *steps = new int[n];
+
+    steps[0] = 0;
+    steps[1] = abs(heights[1] - height[0]);
+
+    for (int i = 2; i <= n; ++i)
+    {
+        steps[i] = min(abs(heights[i] - heights[i - 1]) + steps[i - 1], min(heights[i] - heights[i - 2]) + steps[i - 2]);
+    }
+
+    return steps[n - 1];
+}
