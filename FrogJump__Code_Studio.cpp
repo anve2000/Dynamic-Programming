@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-//one pass, no separate function needed
+//TOP DOWN  :  one pass, no separate function needed
 
 
 vector<int>dp; // made it global , so erase the memory after a testcase execution completes
@@ -36,6 +36,8 @@ int frogJump(int n, vector<int> &heights)
 
     return dp[n] = min(left, right);
 }
+
+// BOTTOM UP
 
 
 int frogJump(int n, vector<int> &heights)
